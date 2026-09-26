@@ -8,7 +8,7 @@ directory = "./public"
 [[d1_databases]]
 binding = "DB"
 database_name = "the-system-db"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "dfe64b8f-9d69-443f-9403-0f462530031d"
 
 [vars]
 TOKEN_TTL_SECONDS = "2592000"
