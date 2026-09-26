@@ -1,5 +1,5 @@
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const API='/api'; let token=localStorage.getItem('system_token')||''; let me=null, current='dashboard', timer={running:false,sec:1500,mode:'FOCUS',id:null};
+const API='https://ucvlrdlycyfpwpyxopxt.supabase.co/functions/v1/api'; let token=localStorage.getItem('system_token')||''; let me=null, current='dashboard', timer={running:false,sec:1500,mode:'FOCUS',id:null};
 const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 async function api(path,opt={}){opt.headers={'Content-Type':'application/json',...(opt.headers||{}),...(token?{Authorization:'Bearer '+token}:{})};let r=await fetch(API+path,opt),d=await r.json().catch(()=>({}));if(!r.ok)throw Error(d.error||'Request failed');return d}
 function toast(msg){let t=$('#toast');t.textContent=msg;t.className='toast';setTimeout(()=>t.className='hidden',2600)}
